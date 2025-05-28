@@ -1,0 +1,286 @@
+:root {
+    --primary-color: #6c5ce7;
+    --primary-light: #a29bfe;
+    --secondary-color: #00b894;
+    --accent-color: #fd79a8;
+    --dark-color: #2d3436;
+    --light-color: #f5f6fa;
+    --text-color: #2d3436;
+    --text-light: #636e72;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --light-bg: #f9f9f9;
+    --light-card: #ffffff;
+    --light-nav: #ffffff;
+    --light-border: #dfe6e9;
+    --dark-bg: #1a1a2e;
+    --dark-text: #f5f6fa;
+    --dark-card: #16213e;
+    --dark-nav: #0f3460;
+    --dark-border: #2d4059;
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-mode .card {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
+}
+
+.navbar {
+    background-color: var(--light-nav);
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link i {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.link-indicator {
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+.nav-link.active .link-indicator,
+.nav-link:hover .link-indicator {
+    width: 100%;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background: var(--light-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.toggle-btn i {
+    font-size: 14px;
+    z-index: 1;
+}
+
+.toggle-btn .fa-sun {
+    color: #f39c12;
+    margin-right: auto;
+}
+
+.toggle-btn .fa-moon {
+    color: #f1c40f;
+    margin-left: auto;
+}
+
+.toggle-thumb {
+    position: absolute;
+    left: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .toggle-thumb {
+    transform: translateX(28px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.app-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--light-card);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--light-border);
+}
+
+.input-section, .results-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--light-border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.friends-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.friend-checkbox {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 2px solid var(--light-border);
+}
+
+.expense-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary-color);
+}
+
+.expense-amount {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.settlement-item {
+    padding: 12px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.positive {
+    color: var(--secondary-color);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .nav-links-container {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
